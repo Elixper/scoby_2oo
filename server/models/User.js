@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+require("./../config/dbConnection")
 
 const userSchema = new Schema({
   firstName: String,

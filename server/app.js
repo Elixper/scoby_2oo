@@ -3,6 +3,7 @@ require("./config/dbConnection");
 
 const express = require("express"); // https://www.npmjs.com/package/express
 const path = require("path");
+let cookieParser = require("cookie-parser");
 const logger = require("morgan"); // https://www.npmjs.com/package/morgan
 const session = require("express-session"); // https://www.npmjs.com/package/express-session
 const MongoStore = require("connect-mongo"); // https://www.npmjs.com/package/connect-mongo
@@ -22,6 +23,7 @@ app.use(
 
 app.use(logger("dev")); // This logs HTTP reponses in the console.
 app.use(express.json()); // Access data sent as json @req.body
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: false })); // Access data sent as urlEncoded (standard form or postman) @req.body
 app.use(express.static(path.join(__dirname, "public")));
 
