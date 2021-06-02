@@ -40,9 +40,15 @@ render() {
     width: '100vw'
   }}
 >
+  {this.state.items.map((item)=> {
+return (
 <Marker
-  coordinates={[2.3522,48.8566]}
-  anchor="bottom">
+key={item._id}
+coordinates={[
+  item.location.coordinates[1],
+  item.location.coordinates[0],
+]}
+anchor="bottom">
   <img style={{
     width:24,
     height:24,
@@ -50,6 +56,8 @@ render() {
   src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Carrot-fb.jpg/800px-Carrot-fb.jpg"
   alt="carrots"/>
 </Marker>
+  );
+})}
 </Map>;   
 </div>
   );
