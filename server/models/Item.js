@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+// require("./../config/dbConnection") pas besoin ici, déjà présent dans app
 
 const itemSchema = new Schema({
     name: String,
